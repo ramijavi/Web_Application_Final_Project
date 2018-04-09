@@ -1,6 +1,6 @@
-Web Application Programming Final Project
+Web Application Programming (CIS 371) Final Project. Authors: Joseph Seder, Jacob Mccloughan & Javier Ramírez
 
-Authors: Joseph Seder, Jacob Mccloughan & Javier Ramírez
+For this project our team will use all the skills and knowledge of web application programming acquired throughout the semester to implement a survey application that uses the BlackBoard API, where users can create and answer questions. The data created from this surveys will be stored in a SQL database and will be displayed in a user-friendly way. 
 
 These are the minium requirements for this project:
 
