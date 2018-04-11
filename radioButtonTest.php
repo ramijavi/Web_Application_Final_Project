@@ -42,28 +42,25 @@ $r = mysqli_query($l, $query);
 	
 echo "<fieldset>";
 echo "<legend>Select an answer:</legend>";
+echo "<form action = 'radioButtonTest.php' method = post>";
 
 while ($row = mysqli_fetch_array($r)) {
 	
 		echo "<label for=$row[answerText]>$row[answerText]</label>";
-		echo "<input type='checkbox' name ='radioButton[]' id=$row[answerText]>";
+		echo "<input type='radio' name ='radioButton' id=$row[answerText]>";
 }
 
+echo "<br><br>";
 echo "<input type='button' id='submitButton' Value='Submit' />";
 echo "</fieldset>";
 echo "</div>";
+echo "</form>";
 
-
-if(isset($_POST['submitButton'])){
-
-    if(!empty($_POST['radioButton'])) {
-
-	foreach($_POST['radioButton'] as $value){
-            echo "value : ".$value.'<br/>';
-        }
-
-    }
-
+if (isset($_POST['submitButton'])) {
+	if(isset($_POST['radioButton']))
+	{
+		echo "You have selected :".$_POST['radioButton'];  //  Displaying Selected Value
+	}
 }
 
 ?>
