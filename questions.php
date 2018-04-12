@@ -6,6 +6,7 @@
 <script src="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.1/jquery.mobile-1.2.1.min.css" />
+<link rel="stylesheet" href="styleSheet.css">
 <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
 <script>
 $(document).ready(function() {
@@ -43,5 +44,6 @@ echo "</tbody>";
 echo "</table>";
 echo "</center>";
 ?>
+<p>CIS 371&copy; 2018</p>
 </body>
 </html>
