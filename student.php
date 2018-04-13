@@ -52,11 +52,12 @@ $u=$users->results;
 </head>
 <body>
 
+
 <?PHP
-
-echo "<form action=createResponse.php method=POST >";
-
-echo "<select id=combobox name=userId>";
+$questionId = $_GET['questionID'];
+echo "<form action='createResponse.php?questionID=".$questionId."' method=POST >";
+echo $questionId;
+echo "<select id=combobox name=studentID>";
 echo "<option></option>";
                 foreach($u as $row)
                 {
@@ -68,6 +69,7 @@ echo "<input type=submit value='Take Survey!' />";
 echo "</form>";
 
 ?>
+
 
 <script>
   $( function() {
