@@ -23,6 +23,10 @@ if (empty($_GET['questionID'])) {
 	echo "No question ID was given.";
 	die();
 }
+if (empty($_GET['studentID'])) {
+	echo  "No student ID was provided.";
+	die();
+}
 
 $l = mysqli_connect("34.224.83.184", "student30", "phppass30", "student30");
 
@@ -48,7 +52,7 @@ echo "<form action = 'radioButtonTest.php?questionID=$_GET[questionID]' method =
 while ($row = mysqli_fetch_array($r)) {
 	
 		echo "<label for=$row[answerText]>$row[answerText]</label>";
-		echo "<input type='radio' name ='myCheckBox' id=$row[answerText]>";
+		echo "<input type='radio' name ='myCheckBox' id=$row[answerID]>";
 }
 
 echo "<br><br>";
@@ -57,25 +61,23 @@ echo "</fieldset>";
 echo "</div>";
 echo "</form>";
 
-
-if (isset($_POST['submitButton'])) {
-	if(isset($_POST['radioButton']))
-	{
-		echo "You have selected :".$_POST['radioButton'];  //  Displaying Selected Value
-	}
-}
-
 ?>
+
 <script>
+var questionID = "<?php echo $_GET['questionID'] ?>";
+var studentID = "<?php echo $_GET['studentID'] ?>";
+var responseID;
+
 $("#checkNow").click(function(event){ 
 $('input:radio[name=myCheckBox]').each(function() 
-{    
+{ 
     if($(this).is(':checked'))
-      alert($(this).attr('id'));
-  
+		responseID = $(this).attr('id');
+})
+
+window.location.href = "submitResponse.php?questionID=" + questionID + "&studentID=" + studentID + "&responseID=" + responseID;
+
 });
-});
-</script>
-               
+</script>        
 </body>
 </html>
