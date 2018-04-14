@@ -17,7 +17,7 @@ $data2 = array();
 
 foreach ($result as $row) {
         $data[] = $row;
-        $answerQuery = sprintf("SELECT COUNT(*) AS frequency, answerID FROM Response WHERE questionID = ".$_GET['questionID']." AND answerID = ".$row[answerID]);
+        $answerQuery = sprintf("SELECT COUNT(*) AS frequency, Answer.answerText AS answer FROM Response, Answer WHERE Answer.answerID = ".$row[answerID]." AND Response.questionID = ".$_GET['questionID']." AND Response.answerID = ".$row[answerID]);
         $result2 = mysqli_query($l, $answerQuery);
         foreach ($result2 as $row2) {
                 $data2[] = $row2;
@@ -25,5 +25,5 @@ foreach ($result as $row) {
 }
 
 print json_encode($data2);
-//print_r ($data2);
+print_r ($data2);
 ?>
