@@ -24,6 +24,6 @@ foreach ($result as $row) {
         }
 }
 
-print json_encode($data2);
-print_r ($data2);
+//print json_encode($data2);
+//print_r ($data2);
 ?>
